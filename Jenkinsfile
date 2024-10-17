@@ -4,9 +4,9 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                // Persona 1: Clona el código del repositorio
+                // Persona 1: Clona el código del repositorio usando SSH
                 echo 'Cloning the repository from Git/GitLab...'
-                git 'https://github.com/mateoudla/jenkins-puravida'
+                git 'git@github.com:mateoudla/jenkins-puravida.git'
             }
         }
 
