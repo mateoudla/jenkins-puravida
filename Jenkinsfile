@@ -4,46 +4,41 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                // Persona 1: Clona el código del repositorio usando SSH
-                echo 'Cloning the repository from Git/GitLab...'
+                echo 'Clonando el repositorio desde GitHub...'
                 git 'git@github.com:mateoudla/jenkins-puravida.git'
             }
         }
 
-        stage('Build & Test') {
+        stage('Construcción y prueba') {
             steps {
                 script {
-                    // Persona 1: Simulación de construcción del proyecto
-                    echo 'Building the project...'
-                    sh 'echo "Build successful!"'
+                    echo 'Construyendo el proyecto....'
+                    sh 'echo "Construcción completa!"'
                     
-                    // Persona 2: Simulación de pruebas unitarias
-                    echo 'Running unit tests...'
-                    sh 'echo "All tests passed!"'
+                    echo 'Corriendo pruebas unitarias....'
+                    sh 'echo "Pruebas aprobadas!"'
                 }
             }
         }
 
-        stage('Integration Check') {
+        stage('Verificación de integración') {
             steps {
-                // Persona 3: Verifica la integración
-                echo 'Checking integration...'
-                sh 'echo "Integration successful!"'
+                echo 'Verificando la integración...'
+                sh 'echo "Integración correcta!"'
             }
         }
 
-        stage('Deploy to Testing') {
+        stage('Despliegue de entorno de pruebas') {
             steps {
-                // Persona 4: Despliega en un entorno de pruebas
-                echo 'Deploying to testing environment...'
-                sh 'echo "Deployment successful!"'
+                echo 'Desplegando el entorno de pruebas...'
+                sh 'echo "Despliegue correcto!"'
             }
         }
     }
     
     post {
         always {
-            echo 'Pipeline completed!'
+            echo 'Pipeline completado!'
         }
     }
 }
