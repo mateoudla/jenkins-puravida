@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     stages {
-        stage('Clone Repository') {
+        stage('Clonación del repositorio') {
             steps {
                 echo 'Clonando el repositorio desde GitHub...'
                 git 'git@github.com:mateoudla/jenkins-puravida.git'
